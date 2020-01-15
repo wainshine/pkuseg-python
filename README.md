@@ -1,6 +1,6 @@
 # pkuseg：一个多领域中文分词工具包 [**(English Version)**](readme/readme_english.md)
 
-pkuseg简单易用，支持细分领域分词，有效提升了分词准确度。
+pkuseg 是基于论文[[Luo et. al, 2019](#论文引用)]的工具包。其简单易用，支持细分领域分词，有效提升了分词准确度。
 
 
 
@@ -162,7 +162,7 @@ pkuseg.pkuseg(model_name = "default", user_dict = "default", postag = False)
 	user_dict		设置用户词典。
 				"default", 默认参数，使用我们提供的词典。
 				None, 不使用词典。
-				dict_path, 在使用默认词典的同时会额外使用用户自定义词典，可以填自己的用户词典的路径，词典格式为一行一个词。
+				dict_path, 在使用默认词典的同时会额外使用用户自定义词典，可以填自己的用户词典的路径，词典格式为一行一个词（如果选择进行词性标注并且已知该词的词性，则在该行写下词和词性，中间用tab字符隔开）。
 	postag		        是否进行词性分析。
 				False, 默认参数，只进行分词，不进行词性标注。
 				True, 会在分词的同时进行词性标注。
@@ -267,6 +267,9 @@ pkuseg.train(trainFile, testFile, savedir, train_iter = 20, init_model = None)
 9. [关于多进程速度问题？](https://github.com/lancopku/pkuseg-python/wiki/FAQ#9-关于多进程速度问题)
 
 
+## 致谢
+
+感谢俞士汶教授（北京大学计算语言所）与邱立坤博士提供的训练数据集！
 
 ## 作者
 
